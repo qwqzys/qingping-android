@@ -597,7 +597,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:gravity="center"
-                android:text="清屏 3.0.0 · 数据仅保存在本机"
+                android:text="清屏 3.1.0 · 数据仅保存在本机"
                 android:textColor="@color/text_dim"
                 android:textSize="10sp" />
         </LinearLayout>

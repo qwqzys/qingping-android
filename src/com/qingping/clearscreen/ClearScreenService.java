@@ -598,12 +598,6 @@ public class ClearScreenService extends AccessibilityService {
             endSession();
             return;
         }
-        if (demoSession) {
-            tapCenter(candidate.bounds);
-            onDemoClicked();
-            return;
-        }
-
         pendingPkg = sessionPkg;
         pendingClass = sessionClass;
         pendingCandidate = candidate;
@@ -616,7 +610,12 @@ public class ClearScreenService extends AccessibilityService {
         if (stage == 2) {
             issued = performActionClick(candidate);
         } else {
-            issued = tapCenter(candidate.bounds);
+            // For our own test page, ACTION_CLICK is the most reliable path.
+            // For real apps, try a real touch first.
+            issued = demoSession && performActionClick(candidate);
+            if (!issued) {
+                issued = tapCenter(candidate.bounds);
+            }
             if (!issued) {
                 issued = performActionClick(candidate);
             }
@@ -662,7 +661,16 @@ public class ClearScreenService extends AccessibilityService {
             return;
         }
 
-        if (isSuccessDestination(pkg)) {
+        // The built-in test page is not a real ad. It must only report
+        // success after TestAdActivity has actually left the foreground.
+        // Never show a success toast just because a tap was issued.
+        if (demoSession) {
+            if (!foregroundClass.contains("TestAdActivity")) {
+                clearPending();
+                onDemoClicked();
+                return;
+            }
+        } else if (isSuccessDestination(pkg)) {
             finishVerified(pkg);
             return;
         }
@@ -735,6 +743,7 @@ public class ClearScreenService extends AccessibilityService {
     }
 
     private void onDemoClicked() {
+        clearPending();
         toast("拦截成功：已自动点击“跳过”");
         sessionPkg = "";
         sessionClass = "";

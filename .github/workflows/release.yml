@@ -1,0 +1,48 @@
+name: Release APK
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install platform and build tools
+        run: |
+          sdkmanager "platforms;android-34" "build-tools;34.0.0"
+
+      - name: Build signed APK
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: 清屏 ${{ github.ref_name }}
+          body: |
+            清屏 ${{ github.ref_name }} 自动构建。
+
+            - 双模式：无障碍 / Root
+            - 本地统计，无网络权限
+            - 安装前请阅读 README 的权限与限制说明
+          files: qingping.apk
+          prerelease: true
+          generate_release_notes: true

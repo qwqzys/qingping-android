@@ -4,7 +4,8 @@
 
 - 包名：`com.qingping.clearscreen`
 - 版本：3.0.0（versionCode 11，测试版）
-- 下载：[release/qingping-3.0.0-test.apk](release/qingping-3.0.0-test.apk)
+- GitHub：[qwqzys/qingping-android](https://github.com/qwqzys/qingping-android)
+- 下载：[GitHub Release v3.0.0-test](https://github.com/qwqzys/qingping-android/releases/tag/v3.0.0-test) · [仓库内 APK](release/qingping-3.0.0-test.apk)
 - minSdk 26 / targetSdk 34（可安装在 Android 8.0–16）
 - 无 `INTERNET` 权限，不上传任何数据
 - 统计保存在本机 SQLite：`qingping_stats.db`
@@ -212,7 +213,7 @@ kind = 2  -- 误触返回
 
 ### 方式 A：手机上直接安装
 
-1. 从仓库下载：[release/qingping-3.0.0-test.apk](release/qingping-3.0.0-test.apk)，或自行构建；
+1. 从 [GitHub Release](https://github.com/qwqzys/qingping-android/releases/tag/v3.0.0-test) 下载，或使用仓库内 [release/qingping-3.0.0-test.apk](release/qingping-3.0.0-test.apk)；
 2. 用“文件管理”打开 `Download/DSHA/qingping.apk`；
 3. 允许“安装未知应用”，点击安装；
 4. 打开“清屏”，点击“开启无障碍防护”；

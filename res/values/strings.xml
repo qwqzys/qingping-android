@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">清屏</string>
+    <string name="service_label">清屏 · 开屏广告拦截</string>
+    <string name="guide_title">权限与自启动</string>
+    <string name="test_title">拦截测试</string>
+    <string name="accessibility_desc">清屏通过无障碍服务识别其他应用开屏广告上的“跳过”按钮并自动点击；在检测到误触引发的浏览器/应用商店跳转时自动返回。所有界面文字只在本机处理，不截图、不上传、不保存。</string>
+</resources>

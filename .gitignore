@@ -1,0 +1,25 @@
+# Build output
+build/
+.tools/
+*.idsig
+
+# Signing material — never commit
+*.keystore
+*.jks
+*.p12
+signing.properties
+
+# Local SDK / IDE
+local.properties
+.gradle/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local logs
+*.log
+
+/qingping.apk

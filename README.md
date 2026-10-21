@@ -3,9 +3,9 @@
 一款**本地运行**的 Android 开屏广告跳过、误触跳转保护与按应用统计工具。
 
 - 包名：`com.qingping.clearscreen`
-- 版本：3.0.0（versionCode 11，测试版）
+- 版本：3.1.0（versionCode 12，测试版）
 - GitHub：[qwqzys/qingping-android](https://github.com/qwqzys/qingping-android)
-- 下载：[GitHub Release v3.0.0-test](https://github.com/qwqzys/qingping-android/releases/tag/v3.0.0-test) · [仓库内 APK](release/qingping-3.0.0-test.apk)
+- 下载：[GitHub Release v3.1.0-test](https://github.com/qwqzys/qingping-android/releases/tag/v3.1.0-test) · [仓库内 APK](release/qingping-3.1.0-test.apk)
 - minSdk 26 / targetSdk 34（可安装在 Android 8.0–16）
 - 无 `INTERNET` 权限，不上传任何数据
 - 统计保存在本机 SQLite：`qingping_stats.db`
@@ -213,7 +213,7 @@ kind = 2  -- 误触返回
 
 ### 方式 A：手机上直接安装
 
-1. 从 [GitHub Release](https://github.com/qwqzys/qingping-android/releases/tag/v3.0.0-test) 下载，或使用仓库内 [release/qingping-3.0.0-test.apk](release/qingping-3.0.0-test.apk)；
+1. 从 [GitHub Release](https://github.com/qwqzys/qingping-android/releases/tag/v3.1.0-test) 下载，或使用仓库内 [release/qingping-3.1.0-test.apk](release/qingping-3.1.0-test.apk)；
 2. 用“文件管理”打开 `Download/DSHA/qingping.apk`；
 3. 允许“安装未知应用”，点击安装；
 4. 打开“清屏”，点击“开启无障碍防护”；
@@ -224,7 +224,7 @@ kind = 2  -- 误触返回
 ### 方式 B：有 ADB 的电脑
 
 ```bash
-adb install -r release/qingping-3.0.0-test.apk
+adb install -r release/qingping-3.1.0-test.apk
 ```
 
 安装后仍需在手机上手动开启无障碍服务。
